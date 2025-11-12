@@ -1,6 +1,7 @@
 
 import uvicorn
 from string_ops import reverse_str
+from string_ops import to_upper
 import json
 from fastapi import FastAPI, HTTPException
 
@@ -15,6 +16,10 @@ def string_reverse(text:str):
     return rev
 
 
+@app.get("/uppercase")
+def cpetol(string:str):
+    up=to_upper(string)
+    return up
 
 
 
