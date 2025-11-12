@@ -9,9 +9,17 @@ from fastapi import FastAPI, HTTPException
 app=FastAPI()
 
 
-# @app.get("/reverse/")
+@app.get("/reverse")
 def string_reverse(text:str):
     rev=reverse_str(text)
-    return json.dumps(rev)
+    return rev
 
-print(string_reverse("erelzevgordon"))
+
+
+
+
+
+
+
+if __name__ == "__main__": 
+    uvicorn.run(app, host="localhost", port=8000)
